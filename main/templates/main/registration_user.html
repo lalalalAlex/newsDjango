@@ -1,0 +1,36 @@
+{% extends 'main./base.html' %}
+{% block title %}
+    Регистрация
+{% endblock %}
+
+{% block content %}
+    <form method="POST" class="">
+        {% csrf_token %}
+
+    <h1 class="text-center mb-5"><b>Пожалуйста зарегистрируйтесь</b></h1>
+
+    <div class="text-center rounded-3" style="background-color: lightgray; width: 500px; margin: 0 auto; height: auto; padding-bottom: 10px;">
+        <div class="form-floating text-center mb-2">
+        <h3 class="fs-5">Введите имя</h3>
+        {{form.username}}
+      <!--      !!!!!!!-->
+        </div>
+        <div class="form-floating text-center mb-2">
+        <h3 class="fs-5">Введите пароль</h3>
+        {{form.password1}}
+<!--      !!!!!!!-->
+        </div>
+        <div class="form-floating text-center mb-2">
+        <h3 class="fs-5">Повторите пароль</h3>
+        {{form.password2}}
+<!--      !!!!!!!-->
+        </div>
+    </div>
+
+        <a href="{% url 'login_user' %}"><button class="btn btn-outline-primary py-2" style="display: block; margin: 0 auto; width: 500px; height: 50px; margin-top: 10px;" type="submit">Зарегистрироваться</button></a>
+
+
+
+
+    </form>
+{% endblock %}

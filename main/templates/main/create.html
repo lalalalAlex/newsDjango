@@ -1,0 +1,18 @@
+{% extends 'main./base.html' %}
+{% block title %}
+Новости
+{% endblock %}
+
+{% block content %}
+<!--!!!!!!!!!!!!!!-->
+<p class="fs-1 ms-5">
+    Создать Новость
+</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.title }}<br>
+    {{ form.description }}<br>
+    <button type="submit" class="bg-primary ms-100 text-white rounded" style="margin-left: 45px; border: none; height: 50px;">Добавить Новость</button>
+    <span>{{ error }}</span>
+</form>
+{% endblock %}

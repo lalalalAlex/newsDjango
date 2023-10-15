@@ -1,0 +1,19 @@
+{% extends 'main./base.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <b><p class="ms-5 pb-10 fs-1">Главная страница</p></b><br>
+    {% if news %}
+        {% for el in news %}
+        <div class="container alert bg-primary text-white mt-2 rounded">
+            <h3>{{ el.title }}</h3>
+            <hr>
+            <p>{{ el.description }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="fs-2 text-center">Пока нет новостей</p>
+    {% endif %}
+{% endblock %}

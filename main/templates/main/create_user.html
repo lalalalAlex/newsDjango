@@ -1,0 +1,25 @@
+{% extends 'main./base.html' %}
+{% block title %}
+    Регистрация
+{% endblock %}
+
+{% block content %}
+<!--!!!!!!!!!!!!!!-->
+  <form method="POST">
+    {% csrf_token %}
+    <br><br><br><h1 class="h3 fw-normal text-center fs-2" style="margin-bottom: 30px;"><b>Пожалуйста, войдите в систему</b></h1><br><br><br>
+    <div class="form-floating">
+      <input type="text" class="rounded" style="width: 400px; border-color: #E1E1E1; height: 50px; margin-left: 40%; margin-right: 60%; margin-bottom: 15px;" name="username" placeholder="Введите имя">
+    </div>
+    <div class="form-floating">
+      <input type="password" class="rounded" style="width: 400px; border-color: #E1E1E1; height: 50px; margin-left: 40%; margin-right: 60%; margin-bottom: 15px;" name='password' placeholder="Пароль">
+    </div>
+
+
+    <button class="btn btn-outline-primary border-primary" style="width: 400px; border-color: #E1E1E1; height: 50px; margin-left: 40%; margin-right: 60%; margin-bottom: 15px;" type="submit">Вход</button>
+    <h3 class="fs-5" style="margin-left: 40.75%;"><a href="{% url 'registration_user' %}">Еще нет аккаунта? Зарегистрироваться</a></h3>
+  </form>
+
+
+<script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{% endblock %}
